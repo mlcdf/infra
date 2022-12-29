@@ -1,10 +1,19 @@
 # Infra
 
+## Secrets
+
+Env var GANDI_KEY set in TFC (as sensitive).
+
 ## Usage
 
-Export GANDI API key as an environment variable
+Login to TFC
 ```
- export TF_VAR_apikey=xxx
+terraform login
+```
+
+Initialize terraform
+```
+terraform init
 ```
 
 Run terraform

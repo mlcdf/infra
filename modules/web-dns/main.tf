@@ -2,14 +2,9 @@ terraform {
   required_providers {
     gandi = {
       source  = "go-gandi/gandi"
-      version = ">= 2.1.0"
+      version = ">= 2.2.2"
     }
   }
-}
-
-variable "apikey" {
-  description = "A GANDI API key"
-  sensitive   = true
 }
 
 variable "ipv4" {
@@ -27,11 +22,6 @@ variable "domain" {
 variable "record_names" {
   description = "A list of records' name"
   type        = list(string)
-}
-
-
-provider "gandi" {
-  key = var.apikey
 }
 
 resource "gandi_livedns_record" "A" {
